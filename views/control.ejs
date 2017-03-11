@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <script>
+        function takeoff() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "/takeoff", true);
+            xhttp.send();
+        }
+        function land() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "/land", true);
+            xhttp.send();
+        }
+        function moveforward() {
+            var xhttp = new XMLHttpRequest();
+            var d = document.getElementById("moveBy").value;
+            xhttp.open("GET", "/moveforward?d="+d+"&s=0.1", true);
+            xhttp.send();
+        }
+        function rotate() {
+            var xhttp = new XMLHttpRequest();
+            var a = document.getElementById("rotateBy").value;
+            var s = document.getElementById("rotateBySpeed").value;
+            xhttp.open("GET", "/rotate?a="+a+"&s="+s, true);
+            xhttp.send();
+        }
+        function stopall() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.open("GET", "/stopall", true);
+            xhttp.send();
+        }
+    </script>
+    <h1>Control panel</h1>
+    <button onclick="javascript:takeoff()">Take off</button>
+    <button onclick="javascript:land()">Land</button>
+    <br><br>
+    <input id="moveBy" value="10" />
+    <button onclick="javascript:moveforward()">Move forward</button>
+    <br><br>
+    <input id="rotateBy" value="90" />
+    <input id="rotateBySpeed" value="0.5" />
+    <button onclick="javascript:rotate()">Rotate</button>
+    <br><br>
+    <button onclick="javascript:stopall()">Stop all</button>
+  </body>
+</html>
