@@ -1,0 +1,11 @@
+{
+	"name": "ARDroneHack17_node",
+	"version": "0.1.0",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Fasand/ARDroneHack17_node.git"
+	},
+	"dependencies": {
+		"ar-drone": "git://github.com/felixge/node-ar-drone.git"
+	}
+}
